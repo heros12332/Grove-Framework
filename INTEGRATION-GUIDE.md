@@ -97,3 +97,7 @@ Use the canonical rubric in `CORE.md`. State reflects the *current interaction* 
 - Feed **adequacy + scenario** into **FAIR** for quantification.  
 - Sync the **decision** to your **risk register** (owner, due, status).
 
+---
+
+© Kelvin Chau, 2025 — Content licensed under CC BY 4.0: https://github.com/kfkchau/Grove-Framework/  
+LinkedIn: https://au.linkedin.com/in/kfkchau
