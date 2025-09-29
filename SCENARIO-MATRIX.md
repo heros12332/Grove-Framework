@@ -5,8 +5,6 @@ The GROVE Framework defines seven canonical security scenarios. These are not ar
 - **Vulnerability**: Present or absent
 - **Asset**: Present or absent
 
-This binary logic yields \(2^3 = 8\) combinations. One is a null state (no threat, no vulnerability, no asset), leaving **seven meaningful scenarios**. These form the basis for posture shifts, control alignment, and executive decision-making.
-
 ## Why Exactly Seven Scenarios?
 
 The model is:
@@ -14,25 +12,28 @@ The model is:
 - **Minimal**: No redundant or overlapping categories
 - **Actionable**: Each scenario maps to distinct control logic and decision posture
 
-## Scenario Overview
+## Scenario Matrix — Exhaustive Risk States (TVA view)
 
-| Scenario     | Description                     | Primary Concern   | Decision Focus        |
-|--------------|----------------------------------|--------------------|------------------------|
-| 1. Normal     | Business-as-usual operations     | Latent risk        | Maintain posture       |
-| 2. Alert      | Elevated threat or anomaly       | Early detection    | Escalate or contain    |
-| 3. Incident   | Confirmed security event         | Impact containment | Activate response      |
-| 4. Crisis     | Systemic or cascading failure    | Survival           | Command and control    |
-| 5. Recovery   | Post-incident restoration        | Resilience         | Rebuild and learn      |
-| 6. Reform     | Strategic redesign               | Structural risk    | Transform systems      |
-| 7. Degrade    | Controlled shutdown or retreat   | Existential risk   | Exit or isolate        |
+This section enumerates the seven operationally relevant scenarios derived from binary presence/absence of **Threat (T)**, **Vulnerability (V)**, and **Asset (A)**. There are 2^3 = 8 combinations; one is null (no T, no V, no A), leaving **seven scenarios**.
 
-## Scenario Attributes
+### Seven-Scenario Matrix: Exhaustive Risk States
 
-Each scenario is mapped to:
-- **Control Objectives**: What must be achieved
-- **Decision Rights**: Who decides, and how
-- **Information Needs**: What data is required
-- **Time Sensitivity**: How fast decisions must be made
+| Scenario | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
+|----------|--------|---------------|-------|------------|----------------------------------------|------------------------------|
+| 1        | ✅     | ✅            | ✅    | High       | Unlocked office with sensitive documents | Deploy controls immediately  |
+| 2        | ❌     | ✅            | ✅    | Medium     | Unsecured area with no known threat     | Investigate & prepare        |
+| 3        | ✅     | ❌            | ✅    | Low        | Locked server room with known threat actor | Maintain vigilance        |
+| 4        | ❌     | ❌            | ✅    | Minimal    | Secured asset with no threat            | Monitor for changes          |
+| 5        | ✅     | ✅            | ❌    | No Risk    | Threat actor targeting non-existent asset | Maintain threat awareness |
+| 6        | ❌     | ❌            | ❌    | No Risk    | Controls in place but no asset or threat | Reassess control necessity |
+| 7        | ❌     | ✅            | ❌    | No Risk    | Controls protecting non-existent asset  | Reallocate resources         |
+
+## How to use
+- Use the table to quickly **triage** areas across your portfolio and assign a **strategic action**.
+- For concrete decisions on specific assets, pair this with:
+  - `RISK-BOWTIE.md` (timing: pre/post event)
+  - `CONTROL-ONION.md` (layering: Predict → Prevent → Control → Disrupt)
+  - `CORE.md` (definitions; control adequacy rubric; data contract)
 
 This matrix supports real-time decision-making under pressure, enabling leaders to act with clarity, speed, and accountability.
 
