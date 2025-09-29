@@ -37,10 +37,10 @@ GROVE fills these gaps by offering:
 
 | File                  | Description                              |
 |-----------------------|------------------------------------------|
-| `grove.md`            | Full framework write-up                  |
-| `scenarios.md`        | Seven-scenario matrix with examples      |
-| `survivability.md`    | Layered defense model                    |
-| `bowtie.md`           | Event-oriented control mapping           |
+| `core.md`            | Full framework write-up                  |
+| `scenario-matrix.md`        | Seven-scenario matrix with examples      |
+| `layered-controls.md`    | Layered defense model                    |
+| `risk-process.md`           | Event-oriented control mapping           |
 
 ## 🚀 How to Use
 
