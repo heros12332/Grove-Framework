@@ -53,5 +53,5 @@ GROVE fills these gaps by offering:
 
 This framework is open-source under the LICENSE. You are free to use, adapt, and extend it with attribution.
 
-> “Based on work from the GROVE Framework by Kelvin Chau, licensed under CC BY 4.0. Available at: https://github.com/kfkchau/Grove-Framework/”  
+> Based on work from the GROVE Framework by Kelvin Chau, licensed under CC BY 4.0. Available at: https://github.com/kfkchau/Grove-Framework/  
 > LinkedIn: https://au.linkedin.com/in/kfkchau
