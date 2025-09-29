@@ -1,114 +1,145 @@
-# 🧠 GROVE Framework — Governed Risk-Oriented Visibility for Executives
+# GROVE Core
 
-## 🎯 Strategic Context
+> Distinguish the parts, integrate the view—then decide.
 
-Most security frameworks are built for compliance, not consequence. They catalogue controls, assign scores, and assume that risk can be managed through static checklists. But in real-world environments—where threats evolve, systems fail, and decisions must be made under pressure—this approach breaks down.
-
-The GROVE Framework is designed for those environments. It is a logic framework for **thinking**, **deciding**, and **adapting** under uncertainty. It is built for executives, architects, and operators who must align strategy, operations, and resilience in the face of real threats.
-
----
-
-## 1. Foundational Concept: What Is a Security Risk?
-
-GROVE defines security risk as the **co-presence** of three elements:  
-**Security Risk = Threat × Vulnerability × Asset**  
-If any one is absent, there is no meaningful risk. This is not a metaphor—it is a logical model that underpins the entire framework.
-
-### Key Definitions
-- **Asset**: Anything of value—people, systems, data, infrastructure.  
-  No asset, no risk.
-- **Threat**: A vector of harm, delivered by a threat actor with intent and capability.  
-  Threats are not generic—they are specific, contextual, and dynamic.
-- **Vulnerability**: A condition of exposure due to inadequate or failed controls.  
-  Vulnerability is not a flaw—it is a **state** that emerges when controls are absent, weak, or misaligned.
+## 0) Purpose
+This document defines GROVE’s core concepts and how they compose into a single, decision-ready view. It is the canonical source for definitions, scenario states, minimal scoring, and the data contract used by examples and templates.
 
 ---
 
-## 2. Seven-Scenario Matrix: Exhaustive Risk States
+## 1) Core Risk Model (distinguish, then link)
+Security Risk = Threat × Vulnerability × Asset
 
-By applying binary logic (present/absent) to each of the three elements (Threat, Vulnerability, Asset), we derive **eight combinations**. One is null (no asset, no threat, no vulnerability), leaving **seven operationally relevant scenarios**.
+- Asset — anything of value (service, system, data, platform). No asset, no risk.
+- Threat — a concrete harm pathway (mechanism/event) executed by a threat actor with intent and capability. Model who (actor) and how (mechanism) separately.
+- Vulnerability — a state of exposure caused by absent/weak/misaligned controls on that specific pathway. In GROVE this is operationalized as control adequacy.
 
-| Scenario | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
-|----------|--------|---------------|-------|------------|----------------------------------------|------------------------------|
-| 1        | ✅     | ✅            | ✅    | High       | Unlocked office with sensitive documents | Deploy controls immediately  |
-| 2        | ❌     | ✅            | ✅    | Medium     | Unsecured area with no known threat     | Investigate & prepare        |
-| 3        | ✅     | ❌            | ✅    | Low        | Locked server room with known threat actor | Maintain vigilance        |
-| 4        | ❌     | ❌            | ✅    | Minimal    | Secured asset with no threat            | Monitor for changes          |
-| 5        | ✅     | ✅            | ❌    | No Risk    | Threat actor targeting non-existent asset | Maintain threat awareness |
-| 6        | ❌     | ❌            | ❌    | No Risk    | Controls in place but no asset or threat | Reassess control necessity |
-| 7        | ❌     | ✅            | ❌    | No Risk    | Controls protecting non-existent asset  | Reallocate resources         |
-
-This matrix is **exhaustive**. There are no other combinations. It provides a shared mental model for executives and operators to assess posture, allocate resources, and shift strategy.
+Decision chain template:
+Asset + actor + threat pathway + control adequacy ⇒ scenario state ⇒ decision (one change, owner, due, metric)
 
 ---
 
-## 3. Survivability Model: Layered, Recursive Defense
+## 2) Seven Scenario States — Canonical Rubric (asset-first, pathway-centric)
+Anchor on one asset × one credible pathway (actor + mechanism). Classify the current operational state using the rubric below.
 
-GROVE assumes that controls will fail. The goal is not perfect protection—it is **survivability**: the ability to endure, adapt, and recover.
+State | Description | Primary lever | Exit criterion
+----- | ----------- | ------------- | --------------
+1 | No credible actor pressure | Horizon scanning | Actor signal emerges or scope changes
+2 | Actor present; pathway not viable | Drift watch; architecture guardrails | Evidence of a viable pathway appears
+3 | Pathway viable; controls absent (adequacy 0) | Establish baseline pathway-cutting control(s) | ≥ one key control at adequacy 1
+4 | Pathway viable; controls partial (adequacy 1–2) | Close coverage gaps; raise adequacy | Pathway-cutting controls at adequacy 3
+5 | Prevention proven; detect/respond weak | Improve detection/response (MTTD/MTTR) | MTTD/MTTR within target thresholds
+6 | Disruption manual | Automate containment/disruption | Automated disruption in place and tested
+7 | Layered controls proven + automated disruption (target) | Sustain and verify | Periodic tests confirm state; guardrails prevent drift
 
-The survivability model is structured as a **layered onion**, where each layer assumes the failure of the one before it:
-
-### Layer 1: Predict
-- Anticipate threats before they materialize.
-- Actions: Threat actor profiling, counterintelligence, horizon scanning.
-
-### Layer 2: Prevent
-- Block threats from forming or accessing targets.
-- Actions: Access controls, segmentation, personnel vetting.
-
-### Layer 3: Control and Assure
-- Stop threat actions even if access is gained.
-- Actions: Encryption, authentication, process integrity.
-
-### Layer 4: Disrupt
-- Respond at the moment of eventuation to reduce impact.
-- Actions: Incident response, tactical containment, threat neutralisation.
-
-A threat must penetrate all four layers to cause harm. This model is **recursive**—lessons from Disrupt feed back into Predict.
+Notes:
+- States are asset-first and pathway-specific; do not use truth-table rows that include “no asset.”
+- Assign exactly one current state per record; plan movement along the ladder (e.g., 3→4→5→6→7).
 
 ---
 
-## 4. Bowtie Logic: Temporal Control Mapping
+## 3) Survivability Model (assume failure, layer for endurance)
+Predict → Prevent → Control → Disrupt
 
-The bowtie model maps controls across time:  
-[Threat] → [Preventive Controls] → [Event] → [Responsive Controls] → [Outcome]
+- Predict — anticipate threats before they materialize (intel, actor profiling, horizon scanning).
+- Prevent — block formation or access (identity, segmentation, hardening, governance).
+- Control — contain even after access (authorization, process integrity, encryption, throttling).
+- Disrupt — reduce impact at event time (detection, response playbooks, automated containment).
 
-- **Left side**: Preventive controls (owned by engineering, policy)  
-- **Right side**: Responsive controls (owned by ops, crisis teams)  
-- **Event node**: The moment of control failure
-
-This model enables:
-- Temporal governance: Who owns what, when
-- Scenario alignment: Mapping controls to the 7-state matrix
-- Gap analysis: Where controls fail or are missing
+A threat must penetrate all layers to cause harm. Lessons from Disrupt feed back into Predict (recursive improvement).
 
 ---
 
-## 5. How GROVE Differs from Legacy Frameworks
+## 4) Bowtie Logic (time-mapping of controls)
+[Actor + Pathway] → [Pre-event controls] → (Event) → [Post-event controls] → [Outcome]
 
-| Legacy Models (e.g. NIST, ISO) | GROVE |
-|--------------------------------|-------|
-| Control catalogues             | Logical reasoning model |
-| Static risk scores             | Dynamic scenario matrix |
-| Prevention-focused             | Survivability-focused |
-| Compliance-driven              | Decision-driven |
-| Terminology-heavy              | Definition-grounded |
+- Left side: Predict/Prevent owners (architecture, identity, network, app).
+- Event node: where prevention fails and response must take over.
+- Right side: Detect/Respond/Disrupt owners (IR, SecOps, SRE/platform).
 
-GROVE is not a replacement for compliance frameworks—it is a **thinking layer** that makes them operationally useful.
-
----
-
-## 6. Strategic Integration
-
-GROVE enables:
-- Executive prioritisation of security investments
-- Scenario-based decision-making across threat landscapes
-- Maturity-based vulnerability assessment using control layering
-- Intelligence-led planning to stay ahead of adversaries
-- Event-oriented control mapping for operational resilience
+Minimum artifacts:
+- Pathway sketch (plain text or diagram)
+- List of pathway-cutting controls with adequacy (0–3) and evidence
+- Disruption actions (manual vs automated) and their owners
 
 ---
 
-© Kelvin Chau, 2025  
-Based on work from the GROVE Framework by Kelvin Chau, licensed under CC BY 4.0. Available at: https://github.com/kfkchau/Grove-Framework/
+## 5) Control Adequacy Rubric (0–3, minimal v0) + confidence
+- 0 — Absent: not deployed/disabled
+- 1 — Ad-hoc: inconsistent; no monitoring; exceptions common
+- 2 — Defined: standardized config; partial coverage; periodic checks
+- 3 — Proven: enforced; monitored; tested; alerts drive response
+
+Tag each score with confidence (low | med | high) based on evidence quality:
+- Nil: no evidence
+- Low: policy/docs only
+- Med: config + occasional checks
+- High: enforced config + continuous telemetry + tested playbook
+
+Prioritise 0→1 and 1→2 moves on pathway-cutting controls; they deliver the largest risk delta.
+
+---
+
+## 6) Single Decision View (data contract per asset × pathway)
+Use this schema in examples/templates; store as YAML or JSON.
+asset:
+  name: "<string>"
+  owner: "<string>"
+  criticality: "high|med|low"
+
+actor:
+  description: "<string>"
+  capability: "opportunistic|capable|targeted"
+
+threat:
+  pathway: "<plain language>"
+  att&ck:
+    - "<technique ID>"
+    # e.g., T1525
+
+controls:
+  - name: "<string>"
+    layer: "predict|prevent|control|disrupt"
+    adequacy: 0 # 0..3
+    evidence:
+      - "<config|test|telemetry|runbook>"
+    confidence: "low|med|high"
+
+survivability:
+  single_points_of_failure:
+    - "<describe sPoF>"
+  notes: "<string>"
+
+scenario_state: 1 # 1..7
+
+decision:
+  change: "<one action that collapses the pathway or automates disruption>"
+  owner: "<role/person>"
+  due: "YYYY-MM-DD"
+  metric: "<how we’ll know it worked>"
+  
+---
+
+## 7) Interoperability (keep your stack; make it decisive)
+- MITRE ATT&CK — map pathway steps/techniques
+- NIST CSF / ISO 27001 — map controls for governance and audits
+- FAIR — feed adequacy and scenario state when quantifying loss exposure
+- Risk register — sync decision, owner, due date, and metric
+
+See also:
+- INTEGRATION-GUIDE.md — how the pieces fit (threat, adequacy, risk; bowtie + onion + scenarios)
+- DECISION-PLAYBOOK.md — 30–90 minute workflow and one-page brief
+
+---
+
+## 8) Definition of Done (quality bar)
+A record is DONE when:
+- The pathway is concrete (ATT&CK-mapped if applicable).
+- At least three pathway-cutting controls are scored with evidence and confidence.
+- A scenario state (1–7) is assigned and justified in one sentence.
+- One decision is named with owner, due date, and metric.
+
+---
+
+© Kelvin Chau, 2025 — Content licensed under CC BY 4.0: https://github.com/kfkchau/Grove-Framework/  
 LinkedIn: https://au.linkedin.com/in/kfkchau
