@@ -26,9 +26,9 @@ By applying binary logic (present/absent) to each of the three elements (Threat,
 | Scenario | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
 |----------|--------|---------------|-------|------------|----------------------------------------|------------------------------|
 | 1        | ✅     | ✅            | ✅    | High       | Unlocked office with sensitive documents | Deploy controls immediately  |
-| 2        | ❌     | ✅            | ✅    | Medium     | Unsecured area with no known threat     | Investigate & prepare        |
+| 2        | ❌     | ✅            | ✅    | High     | Unsecured area with no known threat     | Investigate & prepare        |
 | 3        | ✅     | ❌            | ✅    | Low        | Locked server room with known threat actor | Maintain vigilance        |
-| 4        | ❌     | ❌            | ✅    | Minimal    | Secured asset with no threat            | Monitor for changes          |
+| 4        | ❌     | ❌            | ✅    | Low    | Secured asset with no threat            | Monitor for changes          |
 | 5        | ✅     | ✅            | ❌    | No Risk    | Threat actor targeting non-existent asset | Maintain threat awareness |
 | 6        | ❌     | ❌            | ❌    | No Risk    | Controls in place but no asset or threat | Reassess control necessity |
 | 7        | ❌     | ✅            | ❌    | No Risk    | Controls protecting non-existent asset  | Reallocate resources         |
