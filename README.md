@@ -23,7 +23,7 @@ Traditional risk programs optimize for registers and audits. GROVE optimizes for
 
 By applying binary logic (present/absent) to each of the three elements (Threat, Vulnerability, Asset), we derive **eight combinations**. One is null (no asset, no threat, no vulnerability), leaving **seven operationally relevant scenarios**.
 
-| Scenario | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
+| Priority | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
 |----------|--------|---------------|-------|------------|----------------------------------------|------------------------------|
 | 1        | ✅     | ✅            | ✅    | High       | Unlocked office with sensitive documents | Deploy controls immediately  |
 | 2        | ❌     | ✅            | ✅    | High     | Unsecured area with no known threat     | Investigate & prepare        |
