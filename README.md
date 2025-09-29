@@ -44,10 +44,10 @@ GROVE fills these gaps by offering:
 
 ## 🚀 How to Use
 
-1. **Read `grove.md`** to understand the foundational logic
-2. **Use `scenarios.md`** to map your current risk posture
-3. **Apply `survivability.md`** to assess control adequacy
-4. **Use `bowtie.md`** to trace threat pathways and control interactions
+1. **Read `core.md`** to understand the foundational logic
+2. **Use `scenario-matrix.md`** to map your current risk posture
+3. **Apply `control-onion.md`** to assess control adequacy
+4. **Use `risk-bowtie.md`** to trace threat pathways and control interactions
 
 ## 📄 License
 
