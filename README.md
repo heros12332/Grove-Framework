@@ -15,6 +15,7 @@ Traditional risk programs optimize for registers and audits. GROVE optimizes for
 - **Control adequacy as “vulnerability”** → Maturity/coverage as the lever leaders can change.
 - **Survivability layering** → Predict → Prevent → Control → Disrupt.
 - **Bowtie backbone** → Pre-/post-event controls mapped to threat pathways.
+- **Seven States (asset-first)** → Operational states that drive a single decision and exit criteria (see CORE).
 - **Interop-first** → Composes NIST/ISO/FAIR/ATT&CK; keep your stack, make it decisive.
 
 ---
@@ -23,12 +24,12 @@ Traditional risk programs optimize for registers and audits. GROVE optimizes for
 
 By applying binary logic (present/absent) to each of the three elements (Threat, Vulnerability, Asset), we derive **eight combinations**. One is null (no asset, no threat, no vulnerability), leaving **seven operationally relevant scenarios**.
 
-| Priority | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
+| Scenario | Threat | Vulnerability | Asset | Risk Level | Example                                | Strategic Action             |
 |----------|--------|---------------|-------|------------|----------------------------------------|------------------------------|
 | 1        | ✅     | ✅            | ✅    | High       | Unlocked office with sensitive documents | Deploy controls immediately  |
-| 2        | ❌     | ✅            | ✅    | High     | Unsecured area with no known threat     | Investigate & prepare        |
+| 2        | ❌     | ✅            | ✅    | Medium     | Unsecured area with no known threat     | Investigate & prepare        |
 | 3        | ✅     | ❌            | ✅    | Low        | Locked server room with known threat actor | Maintain vigilance        |
-| 4        | ❌     | ❌            | ✅    | Low    | Secured asset with no threat            | Monitor for changes          |
+| 4        | ❌     | ❌            | ✅    | Minimal    | Secured asset with no threat            | Monitor for changes          |
 | 5        | ✅     | ✅            | ❌    | No Risk    | Threat actor targeting non-existent asset | Maintain threat awareness |
 | 6        | ❌     | ❌            | ❌    | No Risk    | Controls in place but no asset or threat | Reassess control necessity |
 | 7        | ❌     | ✅            | ❌    | No Risk    | Controls protecting non-existent asset  | Reallocate resources         |
@@ -46,16 +47,19 @@ By applying binary logic (present/absent) to each of the three elements (Threat,
 
 ## Repository structure
 - `README.md` — you are here
-- `CORE.md` — core definitions and data contract
+- `CORE.md` — core definitions (incl. TVA), Seven Scenario States (asset-first), data contract
 - `CONTROL-ONION.md` — survivability layers (Predict → Prevent → Control → Disrupt)
 - `RISK-BOWTIE.md` — bowtie timing, event definition, owners, adequacy, automation
 - `SCENARIO-MATRIX.md` — TVA matrix (this section in full) and usage notes
-- `STRATEGIC-POSITION.md`, `INTEGRATION-GUIDE.md`, `DECISION-PLAYBOOK.md`, `VISUAL.pdf`
+- `STRATEGIC-POSITION.md` — interop-first positioning; wedge and KPIs
+- `INTEGRATION-GUIDE.md` — how TVA triage, onion, bowtie, and states integrate to one decision
+- `DECISION-PLAYBOOK.md` — 30–90-minute workflow + 1-page brief
+- `VISUAL.pdf` — one-page visual
+
+### How the docs fit (map)
+TVA triage (**SCENARIO-MATRIX**) → Bowtie timing (**RISK-BOWTIE**) → Layers (**CONTROL-ONION**) → Seven States & schema (**CORE**) → Do the work (**DECISION-PLAYBOOK**).
 
 ---
-
-© Kelvin Chau, 2025 — Content licensed under CC BY 4.0: https://github.com/kfkchau/Grove-Framework/  
-LinkedIn: https://au.linkedin.com/in/kfkchau
 
 ## Control adequacy rubric (minimal v0)
 | Score | Anchor  | Evidence examples |
@@ -65,3 +69,7 @@ LinkedIn: https://au.linkedin.com/in/kfkchau
 | 2     | Defined | Standardized; partial coverage |
 | 3     | Proven  | Enforced; monitored; tested; alerts drive response |
 
+---
+
+© Kelvin Chau, 2025 — Content licensed under CC BY 4.0: https://github.com/kfkchau/Grove-Framework/  
+LinkedIn: https://au.linkedin.com/in/kfkchau
